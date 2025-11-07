@@ -1,0 +1,9 @@
+[submodule "bzero-web"]
+	path = bzero-web
+	url = git@github.com:yuiyeong/bzero-web.git
+[submodule "bzero-api"]
+	path = bzero-api
+	url = git@github.com:yuiyeong/bzero-api.git
+[submodule "peregrina-landing"]
+	path = peregrina-landing
+	url = git@github.com:ghkdgh2365/peregrina-landing.git

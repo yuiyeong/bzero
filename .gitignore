@@ -1,0 +1,11 @@
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+.claude
