@@ -12,27 +12,32 @@
 ### 🗺️ 전체 플로우
 
 ```mermaid
-graph TD
-    A[B0 발견 스토리] --> B[회원가입]
-    B --> C[B0 비행선 터미널]
-    C --> D[도시 선택 - 2개]
-    D --> E[비행선 티켓 구매]
-    E --> F{일반 or 쾌속?}
-    F -->|일반 300P| G[3시간 이동]
-    F -->|쾌속 500P| H[1시간 이동]
-    G --> I[게스트하우스 도착]
-    H --> I
-    I --> J[6명 룸 자동 배정]
-    J --> K{활동 선택}
-    K --> L[사랑방 - 단체 대화]
-    K --> M[라운지 - 1:1 대화]
-    K --> N[개인 숙소 - 자기성찰]
-    L --> O[AI 호스트가 대화 촉진]
-    M --> P[깊은 대화]
-    N --> Q[일기/문답지]
-    O --> R[24시간 후 체크아웃]
-    P --> R
-    Q --> R
+graph TB
+    User[여행자/사용자] -->|가입| Points[포인트 1000P]
+    User -->|접속| B0[B0 비행선 터미널]
+    B0 --> City1[세렌시아<br/>관계의 도시]
+    B0 --> City2[로렌시아<br/>회복의 도시]
+    B0 -.->|Phase 2| City3[4개 도시 추가]
+    User -->|포인트 사용| Ticket[티켓 구매]
+    Ticket -->|일반 300P/3h| AirshipA[일반 비행선]
+    Ticket -->|쾌속 500P/1h| AirshipB[쾌속 비행선]
+    AirshipA --> Arrive[도시 도착]
+    AirshipB --> Arrive
+    Arrive -->|자동 배정| GH[게스트하우스<br/>6명 룸]
+    GH --> Space1[사랑방]
+    GH --> Space2[라운지]
+    GH --> Space3[개인 숙소]
+    Space1 -->|참여| Activity1[단체 채팅<br/>대화 카드<br/>감정 반응]
+    Space2 -->|참여| Activity2[1:1 대화]
+    Space3 -->|참여| Activity3[일기 50P<br/>문답지 50P]
+    Activity3 -->|획득| Points
+    GH -->|24시간 후| Checkout{체크아웃}
+    Checkout -->|300P| Extend[연장]
+    Checkout -->|귀환| B0
+    Extend --> GH
+    style B0 fill: #e1f5ff
+    style GH fill: #fff4e1
+    style Points fill: #ffe1e1
 ```
 
 ---
@@ -214,6 +219,43 @@ graph TD
 ---
 
 ### 기능 4: 게스트하우스 - 6명 룸 (20h)
+
+```mermaid
+graph TB
+subgraph GuestHouse[게스트하우스 - 최대 6명 룸]
+Host[AI 호스트] -->|환영 인사|Lobby[거실]
+Host -->|5분 무대화 시|Sarangbang
+
+Lobby --> Sarangbang[사랑방]
+Lobby --> Lounge[라운지]
+Lobby --> Private[개인 숙소]
+
+subgraph Sarangbang[사랑방 - 단체 공간]
+Chat[실시간 채팅<br/>최대 300자<br/>2초당 1회]
+Card[대화 카드<br/>10장 중 1장 랜덤]
+Reaction[감정 반응<br/>👍😢❤️🔥]
+History[채팅 히스토리<br/>최근 50개<br/>7일 보관]
+end
+
+subgraph Lounge[라운지 - 1:1 공간]
+UserList[같은 룸<br/>여행자 목록]
+Request[대화 신청]
+OneOnOne[1:1 채팅<br/>최대 300자]
+Limit[동시 최대 3개]
+end
+
+subgraph Private[개인 숙소 - 자기성찰]
+Diary[일기 쓰기<br/>500자<br/>1일 1회 50P]
+Question[문답지<br/>200자x3<br/>도시별 1회 50P]
+Privacy[본인만 조회]
+end
+end
+
+style Host fill: #b8e6ff
+style Sarangbang fill: #ffe6b8
+style Lounge fill: #e6ffb8
+style Private fill: #ffb8e6
+```
 
 **사용자 시나리오**: "서연이가 세렌시아에 도착하면 6명 이하의 룸에 자동으로 배정되고, 게스트하우스 거실 화면이 나타난다"
 
@@ -483,6 +525,41 @@ graph TD
 ---
 
 ### 기능 9: 포인트 시스템 (6h)
+
+```mermaid
+graph LR
+    subgraph Earn[포인트 획득]
+        Join[회원가입<br/>1000P<br/>최초 1회]
+        Diary[일기 작성<br/>50P<br/>1일 1회]
+        Quiz[문답지<br/>50P<br/>도시별 1회]
+    end
+
+    subgraph Balance[포인트 잔액]
+        Points[(포인트)]
+    end
+
+    subgraph Spend[포인트 사용]
+        Normal[일반 비행선<br/>300P]
+        Fast[쾌속 비행선<br/>500P]
+        Stay[숙박 연장<br/>300P<br/>24시간]
+    end
+
+    Join --> Points
+    Diary --> Points
+    Quiz --> Points
+    Points -->|차감| Normal
+    Points -->|차감| Fast
+    Points -->|차감| Stay
+    Normal --> Travel[여행]
+    Fast --> Travel
+    Stay --> Extended[체류 연장]
+    Travel --> Experience[경험]
+    Extended --> Experience
+    Experience -->|동기 부여| Diary
+    style Points fill: #ffd700
+    style Earn fill: #d4f1d4
+    style Spend fill: #f1d4d4
+```
 
 **사용자 시나리오**: "서연이가 일기를 쓰고, 문답지를 작성하며 포인트를 모아서 다음 도시로 이동한다"
 
