@@ -50,6 +50,7 @@ erDiagram
         uuid user_id FK "NOT NULL, USER"
         uuid city_id FK "NOT NULL, CITY"
         enum ticket_type "NOT NULL, NORMAL(300P,3h) EXPRESS(500P,1h)"
+        varchar_20 ticket_number UK "NOT NULL, B0-YYYY-000000"
         int cost_points "NOT NULL"
         datetime departure_time "NOT NULL"
         datetime arrival_time "NOT NULL"
@@ -236,7 +237,7 @@ erDiagram
 - Phase 1 데이터: 세렌시아(관계), 로렌시아(회복)
 
 ### 3. TICKET
-- 인덱스: `(user_id, created_at)`, `(status, arrival_time)`
+- 인덱스: `(user_id, created_at)`, `(status, arrival_time)`, `ticket_number` UK
 
 ### 4. GUESTHOUSE
 - 인덱스: `(city_id, guesthouse_type, is_active)`, `(city_id, is_active)`
@@ -278,6 +279,7 @@ erDiagram
 ### UNIQUE 제약
 
 - USER: `email`, `nickname`
+- TICKET: `ticket_number`
 - ROOM: `(guesthouse_id, room_number)`
 - DIARY: `(user_id, diary_date)` - 하루 1개
 - QUESTIONNAIRE: `(user_id, city_id)` - 도시별 1개
@@ -330,3 +332,32 @@ erDiagram
 - `transaction_type`: EARN, SPEND
 - `reason`: SIGNUP, DIARY, QUESTIONNAIRE, TICKET, EXTENSION
 - `status`: PENDING, COMPLETED, FAILED
+
+---
+
+## Phase 1 구현 참고사항
+
+### 메시지 전송 제한 (스팸 방지)
+- Redis를 이용한 Rate Limiting 구현
+- 채팅 메시지: 2초에 1회 제한
+- 대화 신청: 1분에 3회 제한
+- 키 형식: `rate_limit:{action}:{user_id}:{target_id}`
+
+### 체크아웃 알림
+- Celery 태스크로 구현
+- 체크인 시 알림 태스크 예약 (eta = checkout_time - 1hour)
+- 연장 시 기존 태스크 취소 후 재예약
+- Phase 1: 인앱 알림, Phase 2: 푸시/이메일
+
+### 게스트하우스 타입
+- Phase 1: 모든 게스트하우스는 MIXED 타입으로 설정
+- Phase 2: QUIET 타입 추가
+
+### 도시별 문답지 질문
+- 세렌시아(관계): 관계 관련 질문 3개
+- 로렌시아(회복): 회복 관련 질문 3개
+- 질문은 애플리케이션 코드에서 관리
+
+### 대화 카드 사용
+- MVP에서는 무제한 사용 가능
+- 동일 카드 중복 선택 가능
