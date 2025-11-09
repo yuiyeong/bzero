@@ -207,7 +207,7 @@ git push
 
 ### 데이터베이스
 
-- ULID를 기본 ID로 사용 (UUID 대신)
+- UUID v7을 기본 ID로 사용 (RFC 9562 표준)
 - 비동기 SQLAlchemy 사용
 - Alembic 마이그레이션은 항상 검토 후 커밋
 
