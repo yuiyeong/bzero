@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B0 Wireframe - 인증 화면</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- 3.2 로그인/회원가입 선택 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.2 로그인/회원가입 선택 (/auth)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="content-full" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 24px;">
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="logo" style="margin-bottom: 16px;">B0</div>
+            <p class="tagline">"당신 마음이 잠시<br>쉬어갈 곳"</p>
+          </div>
+
+          <div style="width: 100%; margin-bottom: 60px;">
+            <button class="btn btn-primary" style="margin-bottom: 16px;">회원가입</button>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 14px;">
+              이미 계정이 있으신가요? <a href="#" style="color: var(--accent-light); text-decoration: none;">로그인</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.3 회원가입 (Supabase - Step 1) -->
+    <div style="position: relative;">
+      <div class="screen-label">3.3 회원가입 (/auth/signup) - Step 1: Supabase</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">회원가입</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <div class="input-group">
+            <label class="input-label">이메일</label>
+            <input type="email" class="input-field" placeholder="example@email.com">
+            <p class="input-hint success">✓ 사용 가능한 이메일입니다</p>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">비밀번호</label>
+            <input type="password" class="input-field" value="••••••••">
+            <p class="input-hint">8자 이상 입력해주세요</p>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">비밀번호 확인</label>
+            <input type="password" class="input-field" value="••••••••">
+          </div>
+
+          <!-- 안내 메시지 -->
+          <div class="card" style="margin-top: 24px; background: rgba(124, 58, 237, 0.1); border-color: var(--accent);">
+            <p style="font-size: 14px; color: var(--text-secondary); text-align: center;">
+              📧 Supabase Auth로 계정이 생성됩니다<br>
+              <span style="font-size: 12px; color: var(--text-muted);">다음 단계에서 프로필을 설정합니다</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="bottom-fixed">
+          <button class="btn btn-primary">다음</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.4 프로필 설정 (Backend - Step 2) -->
+    <div style="position: relative;">
+      <div class="screen-label">3.4 프로필 설정 (/auth/profile) - Step 2: Backend</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back"></div>
+          <div class="header-title">프로필 설정</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <p style="text-align: center; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.5;">
+            B0에서 사용할 프로필을<br>설정해 주세요
+          </p>
+
+          <div class="input-group">
+            <label class="input-label">닉네임</label>
+            <input type="text" class="input-field" placeholder="여행자">
+            <p class="input-hint">2-10자로 입력해주세요</p>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">프로필 이모지</label>
+            <div class="emoji-grid">
+              <div class="emoji-item">😊</div>
+              <div class="emoji-item">😎</div>
+              <div class="emoji-item selected">🌟</div>
+              <div class="emoji-item">🌈</div>
+              <div class="emoji-item">🎈</div>
+              <div class="emoji-item">🌙</div>
+              <div class="emoji-item">✨</div>
+              <div class="emoji-item">🍀</div>
+              <div class="emoji-item">🎭</div>
+              <div class="emoji-item">🦋</div>
+              <div class="emoji-item">🌊</div>
+              <div class="emoji-item">🔥</div>
+              <div class="emoji-item">💎</div>
+              <div class="emoji-item">🎯</div>
+              <div class="emoji-item">🚀</div>
+            </div>
+          </div>
+
+          <!-- 안내 메시지 -->
+          <div class="card" style="margin-top: 24px; background: rgba(124, 58, 237, 0.1); border-color: var(--accent);">
+            <p style="font-size: 14px; color: var(--text-secondary); text-align: center;">
+              🎁 가입 완료 시 1000P 지급!<br>
+              <span style="font-size: 12px; color: var(--text-muted);">Backend API: POST /users/me</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="bottom-fixed">
+          <button class="btn btn-primary">시작하기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.5 로그인 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.5 로그인 (/auth/login)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">로그인</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <div class="input-group">
+            <label class="input-label">이메일</label>
+            <input type="email" class="input-field" placeholder="example@email.com">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">비밀번호</label>
+            <input type="password" class="input-field" placeholder="비밀번호 입력">
+          </div>
+
+          <!-- 로그인 플로우 설명 -->
+          <div class="card" style="margin-top: 32px;">
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+              <strong style="color: var(--text-secondary);">로그인 플로우:</strong><br>
+              1. Supabase Auth 로그인<br>
+              2. Backend에서 사용자 확인<br>
+              3. 온보딩 미완료 시 → 프로필 설정<br>
+              4. 온보딩 완료 시 → B0 터미널
+            </p>
+          </div>
+        </div>
+
+        <div class="bottom-fixed">
+          <button class="btn btn-primary">로그인</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 로그인 - 에러 상태 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.5 로그인 - 에러 상태</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">로그인</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <div class="input-group">
+            <label class="input-label">이메일</label>
+            <input type="email" class="input-field" value="test@email.com" style="border-color: var(--error);">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">비밀번호</label>
+            <input type="password" class="input-field" value="••••••••" style="border-color: var(--error);">
+            <p class="input-hint error">이메일 또는 비밀번호가 올바르지 않아요</p>
+          </div>
+        </div>
+
+        <div class="bottom-fixed">
+          <button class="btn btn-primary">로그인</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

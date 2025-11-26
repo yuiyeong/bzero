@@ -1,0 +1,945 @@
+/* B0 Wireframe Styles */
+/* 모바일 와이어프레임 기준: 375 x 812 (iPhone X) */
+
+:root {
+  /* 와이어프레임 색상 (흑백/회색톤) */
+  --bg-dark: #1a1a2e;
+  --bg-card: #25253d;
+  --border: #3a3a5c;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+  --text-muted: #6a6a7a;
+  --accent: #7c3aed;
+  --accent-light: #a78bfa;
+  --input-bg: #2a2a45;
+  --success: #22c55e;
+  --error: #ef4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f0f1a;
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* 페이지 컨테이너 */
+.page-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: flex-start;
+}
+
+/* 개별 화면 프레임 */
+.screen {
+  width: 375px;
+  height: 812px;
+  background: var(--bg-dark);
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+}
+
+.screen-label {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* 상태바 (노치) */
+.status-bar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.notch {
+  width: 150px;
+  height: 30px;
+  background: #000;
+  border-radius: 0 0 20px 20px;
+}
+
+/* 헤더 */
+.header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-back {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 20px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.header-action {
+  font-size: 14px;
+  color: var(--accent-light);
+  font-weight: 500;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 콘텐츠 영역 */
+.content {
+  padding: 24px 16px;
+  height: calc(100% - 100px);
+  overflow-y: auto;
+}
+
+.content-full {
+  padding: 0;
+  height: calc(100% - 44px);
+}
+
+/* 버튼 */
+.btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent-light);
+  color: var(--accent-light);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent-light);
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 입력 필드 */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-field {
+  width: 100%;
+  height: 48px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.input-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.input-hint.success {
+  color: var(--success);
+}
+
+.input-hint.error {
+  color: var(--error);
+}
+
+/* 카드 */
+.card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.card-glass {
+  background: rgba(37, 37, 61, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+/* 포인트 뱃지 */
+.point-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-light);
+}
+
+/* 이모지 그리드 */
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 16px;
+  background: var(--input-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.emoji-item {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.emoji-item:hover {
+  background: var(--border);
+}
+
+.emoji-item.selected {
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+/* 페이지 인디케이터 */
+.page-indicator {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dot.active {
+  background: white;
+}
+
+/* 풀스크린 배경 */
+.fullscreen-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, transparent 0%, var(--bg-dark) 100%);
+}
+
+/* 온보딩 텍스트 */
+.onboarding-text {
+  position: absolute;
+  bottom: 180px;
+  left: 24px;
+  right: 24px;
+  text-align: center;
+}
+
+.onboarding-text h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* 로고 */
+.logo {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+}
+
+.logo-small {
+  font-size: 24px;
+}
+
+/* 태그라인 */
+.tagline {
+  font-size: 18px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* 하단 고정 버튼 영역 */
+.bottom-fixed {
+  position: absolute;
+  bottom: 34px;
+  left: 16px;
+  right: 16px;
+}
+
+/* 도시 카드 */
+.city-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+
+.city-card-image {
+  height: 120px;
+  background: linear-gradient(135deg, var(--accent) 0%, #f97316 100%);
+  position: relative;
+}
+
+.city-card-content {
+  padding: 16px;
+}
+
+.city-card-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.city-card-theme {
+  font-size: 14px;
+  color: var(--accent-light);
+  margin-bottom: 8px;
+}
+
+.city-card-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+/* 채팅 메시지 */
+.chat-container {
+  padding: 16px;
+  height: calc(100% - 160px);
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 16px;
+  max-width: 80%;
+}
+
+.message-other {
+  display: flex;
+  gap: 8px;
+}
+
+.message-mine {
+  margin-left: auto;
+}
+
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+}
+
+.message-content {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid var(--border);
+}
+
+.message-mine .message-content {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.message-time {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* 채팅 입력 */
+.chat-input {
+  position: absolute;
+  bottom: 34px;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.chat-input-field {
+  flex: 1;
+  height: 40px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0 16px;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.chat-send-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+/* 공간 카드 (게스트하우스) */
+.space-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.space-icon {
+  font-size: 32px;
+}
+
+.space-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.space-info p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* 티켓 선택 */
+.ticket-option {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 16px;
+  border: 2px solid var(--border);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.ticket-option.selected {
+  border-color: var(--accent);
+}
+
+.ticket-radio {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-option.selected .ticket-radio {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.ticket-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  display: none;
+}
+
+.ticket-option.selected .ticket-radio::after {
+  display: block;
+}
+
+.ticket-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.ticket-info p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* 요약 테이블 */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: var(--text-secondary);
+}
+
+.summary-value {
+  font-weight: 600;
+}
+
+/* 티켓 카드 */
+.ticket-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  padding: 32px 24px;
+  border: 1px solid var(--border);
+  text-align: center;
+  margin: 40px 16px;
+}
+
+.ticket-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.ticket-number {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.ticket-route {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.ticket-location {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ticket-arrow {
+  color: var(--text-muted);
+}
+
+.ticket-countdown {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.ticket-time {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+/* 모달 */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  padding: 24px;
+  width: 100%;
+  max-width: 343px;
+  border: 1px solid var(--border);
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.modal-buttons .btn {
+  flex: 1;
+}
+
+/* 토스트 */
+.toast {
+  position: absolute;
+  bottom: 100px;
+  left: 16px;
+  right: 16px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+/* 배너 알림 */
+.banner {
+  background: var(--accent);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-text {
+  font-size: 14px;
+}
+
+.banner-btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* 여행자 리스트 */
+.traveler-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.traveler-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.traveler-avatar {
+  font-size: 28px;
+}
+
+.traveler-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.traveler-btn {
+  background: var(--accent);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 텍스트 영역 */
+.textarea {
+  width: 100%;
+  min-height: 200px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 16px;
+  color: var(--text-primary);
+  resize: none;
+}
+
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.char-count {
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* 기분 선택 */
+.mood-grid {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+  background: var(--input-bg);
+  border-radius: 12px;
+}
+
+.mood-item {
+  font-size: 32px;
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.mood-item.selected {
+  background: var(--accent);
+}
+
+/* 문답지 진행 */
+.question-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.question-text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* 네비게이션 버튼 */
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-buttons .btn {
+  flex: 1;
+}
+
+/* 빈 상태 */
+.empty-state {
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* 도시 배지 */
+.city-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.city-badge-icon {
+  font-size: 24px;
+}
+
+.city-badge-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.city-badge-info p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* 활동 카드 */
+.activity-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.activity-icon {
+  font-size: 24px;
+}
+
+.activity-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.activity-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.activity-status {
+  font-size: 13px;
+  color: var(--success);
+}
+
+.activity-status.pending {
+  color: var(--text-muted);
+}
+
+/* 인덱스 페이지 */
+.index-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.index-header {
+  margin-bottom: 40px;
+}
+
+.index-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-light);
+  margin-bottom: 8px;
+}
+
+.index-header p {
+  color: var(--text-secondary);
+}
+
+.screen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.screen-link {
+  display: block;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.screen-link:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.screen-link-number {
+  font-size: 12px;
+  color: var(--accent-light);
+  margin-bottom: 4px;
+}
+
+.screen-link-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.screen-link-path {
+  font-size: 12px;
+  color: var(--text-muted);
+}

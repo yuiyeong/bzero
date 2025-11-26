@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B0 Wireframe - 채팅/라운지 화면</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- 3.10 사랑방 - 단체 채팅 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.10 사랑방 (/guesthouse/:cityId/sarangbang)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">사랑방</div>
+          <div class="header-right">
+            <span style="font-size: 14px; color: var(--text-secondary);">5명</span>
+            <span>👥</span>
+          </div>
+        </div>
+
+        <div class="chat-container">
+          <!-- 다른 사람 메시지 -->
+          <div class="message message-other">
+            <div class="message-avatar">😊</div>
+            <div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">민수</p>
+              <div class="message-content">안녕하세요! 처음 왔어요</div>
+              <p class="message-time">14:32</p>
+            </div>
+          </div>
+
+          <!-- 대화 카드 메시지 -->
+          <div class="message message-other">
+            <div class="message-avatar">🎴</div>
+            <div>
+              <div class="message-content" style="background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%); border: none;">
+                <p style="font-size: 12px; opacity: 0.8; margin-bottom: 4px;">대화 카드</p>
+                <p style="font-size: 16px; font-weight: 500;">"요즘 나를 웃게 한 순간은?"</p>
+              </div>
+              <p class="message-time">14:33</p>
+            </div>
+          </div>
+
+          <!-- 내 메시지 -->
+          <div class="message message-mine">
+            <div class="message-content">저도 반가워요~</div>
+            <p class="message-time">14:34</p>
+          </div>
+
+          <!-- 다른 사람 메시지 -->
+          <div class="message message-other">
+            <div class="message-avatar">🌟</div>
+            <div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">서연</p>
+              <div class="message-content">오늘 날씨가 좋아서 기분이 좋네요</div>
+              <p class="message-time">14:35</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input">
+          <div style="font-size: 20px; cursor: pointer;">🎴</div>
+          <input type="text" class="chat-input-field" placeholder="메시지 입력...">
+          <div class="chat-send-btn">→</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.10 사랑방 - 대화 카드 모달 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.10 사랑방 - 대화 카드 모달</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header" style="opacity: 0.5;">
+          <div class="header-back">←</div>
+          <div class="header-title">사랑방</div>
+          <div class="header-right">
+            <span style="font-size: 14px; color: var(--text-secondary);">5명</span>
+            <span>👥</span>
+          </div>
+        </div>
+
+        <div class="chat-container" style="filter: blur(2px); opacity: 0.3;">
+          <div class="message message-other">
+            <div class="message-avatar">😊</div>
+            <div>
+              <div class="message-content">안녕하세요!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 대화 카드 모달 -->
+        <div class="modal-overlay">
+          <div class="modal-card" style="text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 16px;">🎴</div>
+            <p style="font-size: 20px; font-weight: 500; line-height: 1.5; margin-bottom: 24px;">
+              "요즘 내가<br>웃었던 순간은?"
+            </p>
+            <button class="btn btn-primary" style="margin-bottom: 12px;">채팅방에 공유</button>
+            <button class="btn btn-ghost">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.11 라운지 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.11 라운지 (/guesthouse/:cityId/lounge)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">라운지</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">
+            같은 게스트하우스 여행자
+          </p>
+
+          <div class="traveler-item">
+            <div class="traveler-info">
+              <div class="traveler-avatar">😊</div>
+              <div class="traveler-name">민수</div>
+            </div>
+            <button class="traveler-btn">대화 신청</button>
+          </div>
+
+          <div class="traveler-item">
+            <div class="traveler-info">
+              <div class="traveler-avatar">🌟</div>
+              <div class="traveler-name">서연</div>
+            </div>
+            <button class="traveler-btn">대화 신청</button>
+          </div>
+
+          <div class="traveler-item">
+            <div class="traveler-info">
+              <div class="traveler-avatar">🎈</div>
+              <div class="traveler-name">지훈</div>
+            </div>
+            <button class="traveler-btn">대화 신청</button>
+          </div>
+
+          <div class="traveler-item">
+            <div class="traveler-info">
+              <div class="traveler-avatar">🦋</div>
+              <div class="traveler-name">유진</div>
+            </div>
+            <button class="traveler-btn">대화 신청</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.11 라운지 - 빈 상태 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.11 라운지 - 빈 상태</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">라운지</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">
+            같은 게스트하우스 여행자
+          </p>
+
+          <div class="empty-state">
+            <div class="empty-icon">😴</div>
+            <p class="empty-text">아직 다른 여행자가 없어요</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.11 라운지 - 대기 중 상태 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.11 라운지 - 대화 신청 대기 중</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">라운지</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">
+            같은 게스트하우스 여행자
+          </p>
+
+          <div class="traveler-item" style="border-color: var(--accent);">
+            <div class="traveler-info">
+              <div class="traveler-avatar">😊</div>
+              <div>
+                <div class="traveler-name">민수</div>
+                <p style="font-size: 12px; color: var(--accent-light);">응답을 기다리는 중...</p>
+              </div>
+            </div>
+            <button class="traveler-btn" style="background: var(--error);">취소</button>
+          </div>
+
+          <div class="traveler-item">
+            <div class="traveler-info">
+              <div class="traveler-avatar">🌟</div>
+              <div class="traveler-name">서연</div>
+            </div>
+            <button class="traveler-btn">대화 신청</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.12 1:1 채팅 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.12 1:1 채팅 (/chat/:chatId)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title" style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 24px;">😊</span>
+            <span>민수</span>
+          </div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="chat-container">
+          <!-- 상대방 메시지 -->
+          <div class="message message-other">
+            <div class="message-avatar">😊</div>
+            <div>
+              <div class="message-content">안녕하세요!</div>
+              <p class="message-time">14:40</p>
+            </div>
+          </div>
+
+          <!-- 내 메시지 -->
+          <div class="message message-mine">
+            <div class="message-content">반가워요~ 오늘 날씨가 좋네요</div>
+            <p class="message-time">14:41</p>
+          </div>
+
+          <!-- 상대방 메시지 -->
+          <div class="message message-other">
+            <div class="message-avatar">😊</div>
+            <div>
+              <div class="message-content">네, 세렌시아에 처음 오셨어요?</div>
+              <p class="message-time">14:42</p>
+            </div>
+          </div>
+
+          <!-- 내 메시지 -->
+          <div class="message message-mine">
+            <div class="message-content">네, 처음이에요! 여기 분위기가 너무 좋아요</div>
+            <p class="message-time">14:43</p>
+          </div>
+        </div>
+
+        <div class="chat-input">
+          <input type="text" class="chat-input-field" placeholder="메시지 입력...">
+          <div class="chat-send-btn">→</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

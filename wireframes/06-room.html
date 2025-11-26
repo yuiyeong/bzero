@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B0 Wireframe - 개인 숙소 화면</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- 3.13 개인 숙소 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.13 개인 숙소 (/guesthouse/:cityId/room)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">개인 숙소</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <!-- 배경 -->
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div style="font-size: 60px; margin-bottom: 8px;">🛏️</div>
+            <p style="font-size: 14px; color: var(--text-muted);">1인실 인테리어</p>
+          </div>
+
+          <p style="text-align: center; color: var(--text-secondary); margin-bottom: 32px;">
+            조용한 시간을 보내세요
+          </p>
+
+          <!-- 일기 쓰기 -->
+          <div class="activity-card">
+            <div class="activity-header">
+              <div class="activity-icon">📝</div>
+              <div class="activity-title">일기 쓰기</div>
+            </div>
+            <p class="activity-subtitle">오늘의 일기 · 50P</p>
+            <p class="activity-status pending">오늘 작성 가능 ○</p>
+          </div>
+
+          <!-- 문답지 -->
+          <div class="activity-card">
+            <div class="activity-header">
+              <div class="activity-icon">📋</div>
+              <div class="activity-title">문답지</div>
+            </div>
+            <p class="activity-subtitle">세렌시아 문답지 · 50P</p>
+            <p class="activity-status pending">미완료 ○</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.13 개인 숙소 - 완료 상태 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.13 개인 숙소 - 완료 상태</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">개인 숙소</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div style="font-size: 60px; margin-bottom: 8px;">🛏️</div>
+            <p style="font-size: 14px; color: var(--text-muted);">1인실 인테리어</p>
+          </div>
+
+          <p style="text-align: center; color: var(--text-secondary); margin-bottom: 32px;">
+            조용한 시간을 보내세요
+          </p>
+
+          <!-- 일기 쓰기 - 완료 -->
+          <div class="activity-card" style="border-color: var(--success);">
+            <div class="activity-header">
+              <div class="activity-icon">📝</div>
+              <div class="activity-title">일기 쓰기</div>
+            </div>
+            <p class="activity-subtitle">오늘의 일기 · 50P</p>
+            <p class="activity-status">오늘 작성 완료 ✓</p>
+          </div>
+
+          <!-- 문답지 - 완료 -->
+          <div class="activity-card" style="border-color: var(--success);">
+            <div class="activity-header">
+              <div class="activity-icon">📋</div>
+              <div class="activity-title">문답지</div>
+            </div>
+            <p class="activity-subtitle">세렌시아 문답지 · 50P</p>
+            <p class="activity-status">완료 ✓</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.14 일기 작성 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.14 일기 작성 (/guesthouse/:cityId/room/diary)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title"></div>
+          <div class="header-action">저장</div>
+        </div>
+
+        <div class="content">
+          <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 24px;">
+            2024년 12월 15일
+          </p>
+
+          <div class="input-group">
+            <label class="input-label">제목 (선택)</label>
+            <input type="text" class="input-field" placeholder="오늘의 제목">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">오늘의 기록</label>
+            <textarea class="textarea" placeholder="오늘 하루는 어떠셨나요?"></textarea>
+            <p class="char-count">0/500자</p>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">오늘의 기분</label>
+            <div class="mood-grid">
+              <div class="mood-item">😊</div>
+              <div class="mood-item">😐</div>
+              <div class="mood-item">😢</div>
+              <div class="mood-item">😠</div>
+              <div class="mood-item selected">🥰</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.14 일기 작성 - 작성 중 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.14 일기 작성 - 작성 중</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title"></div>
+          <div class="header-action" style="color: var(--accent);">저장</div>
+        </div>
+
+        <div class="content">
+          <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 24px;">
+            2024년 12월 15일
+          </p>
+
+          <div class="input-group">
+            <label class="input-label">제목 (선택)</label>
+            <input type="text" class="input-field" value="세렌시아에서의 첫날">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">오늘의 기록</label>
+            <textarea class="textarea" style="color: var(--text-primary);">오늘 처음으로 세렌시아에 도착했다. 노을빛 항구의 풍경이 정말 아름다웠다. 사랑방에서 만난 사람들도 다들 따뜻했고, 민수님과 좋은 대화를 나눴다.</textarea>
+            <p class="char-count">98/500자</p>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">오늘의 기분</label>
+            <div class="mood-grid">
+              <div class="mood-item">😊</div>
+              <div class="mood-item">😐</div>
+              <div class="mood-item">😢</div>
+              <div class="mood-item">😠</div>
+              <div class="mood-item selected">🥰</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.15 문답지 작성 - 질문 1 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.15 문답지 작성 (/guesthouse/:cityId/room/questionnaire)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">세렌시아 문답지</div>
+          <div class="header-action" style="color: var(--text-muted);">1/3</div>
+        </div>
+
+        <div class="content">
+          <div class="question-card">
+            <p class="question-text">"요즘 나에게 힘이<br>되어주는 사람은?"</p>
+          </div>
+
+          <textarea class="textarea" placeholder="답변을 입력해주세요"></textarea>
+          <p class="char-count">0/200자</p>
+        </div>
+
+        <div class="bottom-fixed">
+          <div class="nav-buttons">
+            <button class="btn btn-secondary btn-disabled">이전</button>
+            <button class="btn btn-primary">다음</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.15 문답지 작성 - 질문 2 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.15 문답지 - 질문 2</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">세렌시아 문답지</div>
+          <div class="header-action" style="color: var(--text-muted);">2/3</div>
+        </div>
+
+        <div class="content">
+          <div class="question-card">
+            <p class="question-text">"최근에 누군가와 나눈<br>의미 있는 대화는?"</p>
+          </div>
+
+          <textarea class="textarea" style="color: var(--text-primary);">오늘 사랑방에서 민수님과 나눈 대화가 기억에 남아요. 서로의 일상에 대해 이야기하면서 공감대를 느꼈습니다.</textarea>
+          <p class="char-count">72/200자</p>
+        </div>
+
+        <div class="bottom-fixed">
+          <div class="nav-buttons">
+            <button class="btn btn-secondary">이전</button>
+            <button class="btn btn-primary">다음</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.15 문답지 작성 - 질문 3 (마지막) -->
+    <div style="position: relative;">
+      <div class="screen-label">3.15 문답지 - 질문 3 (마지막)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">세렌시아 문답지</div>
+          <div class="header-action" style="color: var(--text-muted);">3/3</div>
+        </div>
+
+        <div class="content">
+          <div class="question-card">
+            <p class="question-text">"관계에서 내가 가장<br>중요하게 생각하는 것은?"</p>
+          </div>
+
+          <textarea class="textarea" placeholder="답변을 입력해주세요"></textarea>
+          <p class="char-count">0/200자</p>
+        </div>
+
+        <div class="bottom-fixed">
+          <div class="nav-buttons">
+            <button class="btn btn-secondary">이전</button>
+            <button class="btn btn-primary">완료</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

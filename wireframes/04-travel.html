@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B0 Wireframe - 여행 관련 화면</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- 3.7 비행선 티켓 구매 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.7 비행선 티켓 구매 (/ticket/:cityId)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">비행선 예매</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <!-- 경로 정보 -->
+          <div style="text-align: center; margin-bottom: 32px;">
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">출발</p>
+            <p style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">B0 비행선 터미널</p>
+            <div style="font-size: 24px; color: var(--text-muted); margin-bottom: 16px;">↓</div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">도착</p>
+            <p style="font-size: 18px; font-weight: 600; color: var(--accent-light);">세렌시아</p>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin-bottom: 24px;"></div>
+
+          <h3 style="font-size: 16px; margin-bottom: 16px; color: var(--text-secondary);">비행선 선택</h3>
+
+          <!-- 일반 비행선 -->
+          <div class="ticket-option">
+            <div class="ticket-radio"></div>
+            <div class="ticket-info">
+              <h3>일반 비행선</h3>
+              <p>300P · 소요 3시간</p>
+            </div>
+          </div>
+
+          <!-- 쾌속 비행선 (선택됨) -->
+          <div class="ticket-option selected">
+            <div class="ticket-radio"></div>
+            <div class="ticket-info">
+              <h3>쾌속 비행선</h3>
+              <p>500P · 소요 1시간</p>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin: 24px 0;"></div>
+
+          <!-- 결제 요약 -->
+          <div class="summary-row">
+            <span class="summary-label">필요 포인트</span>
+            <span class="summary-value">500P</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">보유 포인트</span>
+            <span class="summary-value">850P</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">결제 후 잔액</span>
+            <span class="summary-value" style="color: var(--accent-light);">350P</span>
+          </div>
+        </div>
+
+        <div class="bottom-fixed">
+          <button class="btn btn-primary">결제하기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.7 비행선 티켓 구매 - 포인트 부족 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.7 비행선 티켓 구매 - 포인트 부족</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">비행선 예매</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <div style="text-align: center; margin-bottom: 32px;">
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">출발</p>
+            <p style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">B0 비행선 터미널</p>
+            <div style="font-size: 24px; color: var(--text-muted); margin-bottom: 16px;">↓</div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">도착</p>
+            <p style="font-size: 18px; font-weight: 600; color: var(--accent-light);">세렌시아</p>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin-bottom: 24px;"></div>
+
+          <h3 style="font-size: 16px; margin-bottom: 16px; color: var(--text-secondary);">비행선 선택</h3>
+
+          <div class="ticket-option selected">
+            <div class="ticket-radio"></div>
+            <div class="ticket-info">
+              <h3>일반 비행선</h3>
+              <p>300P · 소요 3시간</p>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin: 24px 0;"></div>
+
+          <div class="summary-row">
+            <span class="summary-label">필요 포인트</span>
+            <span class="summary-value">300P</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">보유 포인트</span>
+            <span class="summary-value" style="color: var(--error);">200P</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">부족 포인트</span>
+            <span class="summary-value" style="color: var(--error);">100P</span>
+          </div>
+
+          <!-- 포인트 부족 안내 -->
+          <div class="card" style="margin-top: 16px; background: rgba(239, 68, 68, 0.1); border-color: var(--error);">
+            <p style="font-size: 14px; color: var(--error); text-align: center;">
+              여행 자금이 부족해요.<br>일기를 쓰거나 대화해 볼까요?
+            </p>
+          </div>
+        </div>
+
+        <div class="bottom-fixed">
+          <button class="btn btn-primary btn-disabled">결제하기</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.8 티켓 화면 (카운트다운) -->
+    <div style="position: relative;">
+      <div class="screen-label">3.8 티켓 화면 (/ticket/:ticketId/waiting)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="content-full" style="background: linear-gradient(180deg, #3a2a5a 0%, #1a1a2e 100%);">
+          <!-- 배경 효과 -->
+          <div style="position: absolute; top: 100px; left: 50%; transform: translateX(-50%); font-size: 100px; opacity: 0.1;">☁️</div>
+          <div style="position: absolute; top: 200px; right: 30px; font-size: 60px; opacity: 0.1;">☁️</div>
+          <div style="position: absolute; top: 300px; left: 20px; font-size: 80px; opacity: 0.1;">☁️</div>
+
+          <!-- 티켓 카드 -->
+          <div class="ticket-card" style="margin-top: 120px;">
+            <div class="ticket-icon">✈️</div>
+            <p class="ticket-number">B0-2024</p>
+
+            <div style="border-top: 1px dashed var(--border); margin: 16px 0;"></div>
+
+            <div class="ticket-route">
+              <div class="ticket-location">B0</div>
+              <div class="ticket-arrow">→</div>
+              <div class="ticket-location" style="color: var(--accent-light);">세렌시아</div>
+            </div>
+
+            <div style="border-top: 1px dashed var(--border); margin: 16px 0;"></div>
+
+            <p class="ticket-countdown">도착까지</p>
+            <p class="ticket-time">58:42</p>
+          </div>
+
+          <p style="text-align: center; color: var(--text-secondary); font-size: 16px;">
+            곧 도착합니다...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.9 게스트하우스 거실 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.9 게스트하우스 거실 (/guesthouse/:cityId)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="content-full" style="background: linear-gradient(180deg, rgba(249, 115, 22, 0.2) 0%, #1a1a2e 50%);">
+          <!-- 배경 -->
+          <div style="padding: 60px 16px 24px;">
+            <div style="text-align: center; margin-bottom: 24px;">
+              <div style="font-size: 60px; margin-bottom: 8px;">🏡</div>
+              <p style="font-size: 12px; color: var(--text-muted);">게스트하우스 배경</p>
+            </div>
+
+            <!-- 도시 배지 -->
+            <div class="city-badge" style="display: flex; width: fit-content; margin: 0 auto 16px;">
+              <div class="city-badge-icon">🌅</div>
+              <div class="city-badge-info">
+                <h3>세렌시아</h3>
+                <p>체크아웃: 내일 14:00</p>
+              </div>
+            </div>
+
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.5;">
+              세렌시아 게스트하우스에<br>오신 것을 환영합니다!
+            </p>
+
+            <!-- 공간 카드들 -->
+            <div class="space-card">
+              <div class="space-icon">💬</div>
+              <div class="space-info">
+                <h3>사랑방</h3>
+                <p>다른 여행자들과 대화</p>
+              </div>
+            </div>
+
+            <div class="space-card">
+              <div class="space-icon">👥</div>
+              <div class="space-info">
+                <h3>라운지</h3>
+                <p>1:1 대화 신청</p>
+              </div>
+            </div>
+
+            <div class="space-card">
+              <div class="space-icon">🛏️</div>
+              <div class="space-info">
+                <h3>개인 숙소</h3>
+                <p>일기와 문답지 작성</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom-fixed">
+            <button class="btn btn-secondary">연장하기 300P</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

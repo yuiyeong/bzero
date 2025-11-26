@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B0 Wireframe - B0 터미널</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- 3.6 B0 터미널 - 홈 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.6 B0 터미널 - 홈 (/)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header" style="border-bottom: none; background: transparent;">
+          <div style="font-size: 28px;">🌟</div>
+          <div class="logo-small" style="color: var(--accent);">B0</div>
+          <div class="point-badge">850P</div>
+        </div>
+
+        <div class="content" style="padding-top: 0;">
+          <!-- 배경 영역 -->
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div style="font-size: 60px; margin-bottom: 8px;">🚀</div>
+            <p style="font-size: 14px; color: var(--text-muted);">비행선 터미널 배경</p>
+          </div>
+
+          <h2 style="text-align: center; font-size: 20px; margin-bottom: 24px; color: var(--text-secondary);">
+            어디로 떠나볼까요?
+          </h2>
+
+          <!-- 세렌시아 카드 -->
+          <div class="city-card">
+            <div class="city-card-image" style="background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px;">🌅</div>
+            </div>
+            <div class="city-card-content">
+              <h3 class="city-card-name">세렌시아</h3>
+              <p class="city-card-theme">관계의 도시</p>
+              <p class="city-card-desc">노을빛 항구 마을에서 소중한 인연을 만나요</p>
+              <button class="btn btn-secondary" style="height: 40px; font-size: 14px;">비행선 예매</button>
+            </div>
+          </div>
+
+          <!-- 로렌시아 카드 -->
+          <div class="city-card">
+            <div class="city-card-image" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px;">🌲</div>
+            </div>
+            <div class="city-card-content">
+              <h3 class="city-card-name">로렌시아</h3>
+              <p class="city-card-theme">회복의 도시</p>
+              <p class="city-card-desc">숲 속 오두막에서 지친 마음을 쉬어가요</p>
+              <button class="btn btn-secondary" style="height: 40px; font-size: 14px;">비행선 예매</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 프로필 클릭 시 모달 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.6 B0 터미널 - 프로필 모달</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header" style="border-bottom: none; background: transparent;">
+          <div style="font-size: 28px;">🌟</div>
+          <div class="logo-small" style="color: var(--accent);">B0</div>
+          <div class="point-badge">850P</div>
+        </div>
+
+        <div class="content" style="padding-top: 0; filter: blur(2px); opacity: 0.5;">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div style="font-size: 60px; margin-bottom: 8px;">🚀</div>
+          </div>
+          <div class="city-card" style="height: 200px;"></div>
+        </div>
+
+        <!-- 프로필 모달 -->
+        <div class="modal-overlay">
+          <div class="modal-card">
+            <div style="text-align: center; margin-bottom: 24px;">
+              <div style="font-size: 64px; margin-bottom: 16px;">🌟</div>
+              <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 4px;">여행자</h3>
+              <p style="font-size: 14px; color: var(--text-secondary);">example@email.com</p>
+            </div>
+
+            <div class="summary-row">
+              <span class="summary-label">보유 포인트</span>
+              <span class="summary-value" style="color: var(--accent-light);">850P</span>
+            </div>
+
+            <div class="modal-buttons" style="margin-top: 24px;">
+              <button class="btn btn-secondary" style="height: 40px; font-size: 14px;">프로필 수정</button>
+              <button class="btn btn-ghost" style="height: 40px; font-size: 14px; color: var(--error);">로그아웃</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
