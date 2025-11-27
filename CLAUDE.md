@@ -21,9 +21,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ├── bzero-api/           # 백엔드 API (git submodule)
 ├── bzero-web/           # 메인 웹앱 (git submodule)
 ├── peregrina-landing/   # 랜딩 페이지 (git submodule)
-└── docs/                # 프로젝트 문서
-    ├── 00-concept.md    # 프로젝트 컨셉 및 기획
-    └── 01-mvp.md        # MVP 개발 로드맵 및 기능 명세
+├── docs/                # 프로젝트 문서
+│   ├── 00-concept.md    # 프로젝트 컨셉 및 기획
+│   ├── 01-mvp.md        # MVP 개발 로드맵 및 기능 명세
+│   ├── 02-design-system.md  # 디자인 시스템 (색상, 타이포, 컴포넌트)
+│   ├── 03-screens.md    # 화면 명세서 (와이어프레임)
+│   └── workflow.md      # Claude Code 작업 워크플로우
+└── .claude/
+    └── skills/
+        └── brand-guide/ # 브랜드 가이드 스킬
 ```
 
 ## 하위 프로젝트별 명령어
@@ -120,7 +126,7 @@ git push
 ### 사용자 여정
 
 1. **온보딩**: 신비한 핸드폰 앱 발견 → B0(지하 0층) 초대 → 회원가입 (1000P 지급)
-2. **B0 비행선 터미널**: 6개 테마별 도시 탐색 → 비행선 티켓 구매 (일반 300P/고속 500P)
+2. **B0 비행선 터미널**: 테마별 도시 탐색 → 비행선 티켓 구매 (일반 300P/쾌속 500P)
 3. **도시 도착**: 게스트하우스 유형 선택 (혼합형/조용한 방)
 4. **활동**:
    - 사랑방: 단체 대화 (최대 6명/룸)
@@ -153,7 +159,7 @@ git push
 ### 포인트 시스템
 
 - **획득**: 회원가입(1000P), 일기(50P/일), 문답지(50P/도시)
-- **사용**: 일반 비행선(300P), 고속 비행선(500P), 숙박 연장(300P/일)
+- **사용**: 일반 비행선(300P), 쾌속 비행선(500P), 숙박 연장(300P/일)
 
 ## 개발 프로세스
 
@@ -223,5 +229,14 @@ git push
 
 - **프로젝트 컨셉**: `docs/00-concept.md`
 - **MVP 개발 로드맵**: `docs/01-mvp.md`
+- **디자인 시스템**: `docs/02-design-system.md`
+- **화면 명세서**: `docs/03-screens.md`
+- **작업 워크플로우**: `docs/workflow.md`
 - **백엔드 가이드**: `bzero-api/CLAUDE.md`
 - **프론트엔드 가이드**: `bzero-web/CLAUDE.md`
+
+## Claude Code 스킬
+
+- **brand-guide**: 브랜드 가이드 스킬 (`.claude/skills/brand-guide/`)
+  - 문서 작성, 프론트엔드 디자인, UI/UX 작업, 카피라이팅 시 사용
+  - 색상, 타이포그래피, 톤앤매너, 세계관 용어 가이드 제공
