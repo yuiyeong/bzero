@@ -5,6 +5,245 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B0 Wireframe - B0 터미널</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 터미널 전용 스타일 */
+    .terminal-bg {
+      position: absolute;
+      top: 44px;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background: linear-gradient(180deg, rgba(124, 58, 237, 0.15) 0%, transparent 100%);
+      overflow: hidden;
+    }
+
+    .terminal-bg::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 120px;
+      background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+    }
+
+    .airship-silhouette {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 48px;
+      opacity: 0.6;
+      filter: drop-shadow(0 4px 12px rgba(124, 58, 237, 0.4));
+    }
+
+    .terminal-title {
+      text-align: center;
+      padding: 100px 16px 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .terminal-title h1 {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-bottom: 4px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .terminal-title h2 {
+      font-size: 22px;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* 비행선 티켓 카드 */
+    .flight-ticket {
+      background: var(--bg-card);
+      border-radius: 16px;
+      margin: 0 16px 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .flight-ticket::before,
+    .flight-ticket::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--bg-dark);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .flight-ticket::before {
+      left: -10px;
+    }
+
+    .flight-ticket::after {
+      right: -10px;
+    }
+
+    .ticket-top {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .ticket-destination {
+      flex: 1;
+    }
+
+    .ticket-city-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .ticket-city-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .ticket-city-theme {
+      font-size: 13px;
+      color: var(--accent-light);
+    }
+
+    .ticket-route-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .ticket-route-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border) 0%, var(--accent-light) 50%, var(--border) 100%);
+      position: relative;
+    }
+
+    .ticket-route-line::after {
+      content: '✈';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+      color: var(--accent-light);
+    }
+
+    .ticket-bottom {
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ticket-info {
+      display: flex;
+      gap: 20px;
+    }
+
+    .ticket-info-item {
+      text-align: left;
+    }
+
+    .ticket-info-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    .ticket-info-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .ticket-price {
+      background: var(--accent);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .ticket-price-label {
+      font-size: 10px;
+      opacity: 0.8;
+      display: block;
+    }
+
+    /* 도시별 색상 */
+    .ticket-serencia .ticket-city-icon {
+      background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
+    }
+
+    .ticket-lorencia .ticket-city-icon {
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    }
+
+    .ticket-emmacia .ticket-city-icon {
+      background: linear-gradient(135deg, #facc15 0%, #fde68a 100%);
+    }
+
+    .ticket-damarin .ticket-city-icon {
+      background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    }
+
+    .ticket-galicia .ticket-city-icon {
+      background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+    }
+
+    /* 터미널 안내 */
+    .terminal-notice {
+      margin: 0 16px 16px;
+      padding: 12px 16px;
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .terminal-notice-icon {
+      font-size: 20px;
+    }
+
+    .terminal-notice-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* 스크롤 영역 */
+    .terminal-scroll {
+      height: calc(100% - 100px);
+      overflow-y: auto;
+      padding-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
   <div class="page-container">
@@ -17,46 +256,123 @@
           <div class="notch"></div>
         </div>
 
-        <div class="header" style="border-bottom: none; background: transparent;">
+        <!-- 배경 효과 -->
+        <div class="terminal-bg">
+          <div class="airship-silhouette">🎈</div>
+        </div>
+
+        <div class="header" style="border-bottom: none; background: transparent; position: relative; z-index: 2;">
           <div style="font-size: 28px;">🌟</div>
           <div class="logo-small" style="color: var(--accent);">B0</div>
           <div class="point-badge">850P</div>
         </div>
 
-        <div class="content" style="padding-top: 0;">
-          <!-- 배경 영역 -->
-          <div style="text-align: center; margin-bottom: 24px;">
-            <div style="font-size: 60px; margin-bottom: 8px;">🚀</div>
-            <p style="font-size: 14px; color: var(--text-muted);">비행선 터미널 배경</p>
+        <div class="terminal-scroll">
+          <div class="terminal-title">
+            <h1>Departure Terminal</h1>
+            <h2>어디로 떠나볼까요?</h2>
           </div>
 
-          <h2 style="text-align: center; font-size: 20px; margin-bottom: 24px; color: var(--text-secondary);">
-            어디로 떠나볼까요?
-          </h2>
-
-          <!-- 세렌시아 카드 -->
-          <div class="city-card">
-            <div class="city-card-image" style="background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);">
-              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px;">🌅</div>
-            </div>
-            <div class="city-card-content">
-              <h3 class="city-card-name">세렌시아</h3>
-              <p class="city-card-theme">관계의 도시</p>
-              <p class="city-card-desc">노을빛 항구 마을에서 소중한 인연을 만나요</p>
-              <button class="btn btn-secondary" style="height: 40px; font-size: 14px;">비행선 예매</button>
+          <!-- 터미널 안내 -->
+          <div class="terminal-notice">
+            <div class="terminal-notice-icon">🛫</div>
+            <div class="terminal-notice-text">
+              비행선을 타고 원하는 도시로 떠나보세요.<br>
+              각 도시에서 새로운 여행자들을 만날 수 있어요.
             </div>
           </div>
 
-          <!-- 로렌시아 카드 -->
-          <div class="city-card">
-            <div class="city-card-image" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);">
-              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px;">🌲</div>
+          <!-- 세렌시아 티켓 -->
+          <div class="flight-ticket ticket-serencia">
+            <div class="ticket-top">
+              <div class="ticket-city-icon">🌅</div>
+              <div class="ticket-destination">
+                <div class="ticket-city-name">세렌시아</div>
+                <div class="ticket-city-theme">관계의 도시</div>
+              </div>
             </div>
-            <div class="city-card-content">
-              <h3 class="city-card-name">로렌시아</h3>
-              <p class="city-card-theme">회복의 도시</p>
-              <p class="city-card-desc">숲 속 오두막에서 지친 마음을 쉬어가요</p>
-              <button class="btn btn-secondary" style="height: 40px; font-size: 14px;">비행선 예매</button>
+            <div class="ticket-bottom">
+              <div class="ticket-info">
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">출발</div>
+                  <div class="ticket-info-value">B0</div>
+                </div>
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">도착</div>
+                  <div class="ticket-info-value">세렌시아</div>
+                </div>
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">소요</div>
+                  <div class="ticket-info-value">5분</div>
+                </div>
+              </div>
+              <div class="ticket-price">
+                <span class="ticket-price-label">일반석</span>
+                300P
+              </div>
+            </div>
+          </div>
+
+          <!-- 로렌시아 티켓 -->
+          <div class="flight-ticket ticket-lorencia">
+            <div class="ticket-top">
+              <div class="ticket-city-icon">🌲</div>
+              <div class="ticket-destination">
+                <div class="ticket-city-name">로렌시아</div>
+                <div class="ticket-city-theme">회복의 도시</div>
+              </div>
+            </div>
+            <div class="ticket-bottom">
+              <div class="ticket-info">
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">출발</div>
+                  <div class="ticket-info-value">B0</div>
+                </div>
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">도착</div>
+                  <div class="ticket-info-value">로렌시아</div>
+                </div>
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">소요</div>
+                  <div class="ticket-info-value">5분</div>
+                </div>
+              </div>
+              <div class="ticket-price">
+                <span class="ticket-price-label">일반석</span>
+                300P
+              </div>
+            </div>
+          </div>
+
+          <!-- 엠마시아 티켓 (준비 중) -->
+          <div class="flight-ticket ticket-emmacia" style="opacity: 0.5;">
+            <div class="ticket-top">
+              <div class="ticket-city-icon">☀️</div>
+              <div class="ticket-destination">
+                <div class="ticket-city-name">엠마시아</div>
+                <div class="ticket-city-theme">희망의 도시</div>
+              </div>
+              <div style="font-size: 12px; color: var(--text-muted); background: var(--input-bg); padding: 4px 8px; border-radius: 4px;">준비 중</div>
+            </div>
+            <div class="ticket-bottom">
+              <div class="ticket-info">
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">출발</div>
+                  <div class="ticket-info-value">B0</div>
+                </div>
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">도착</div>
+                  <div class="ticket-info-value">엠마시아</div>
+                </div>
+                <div class="ticket-info-item">
+                  <div class="ticket-info-label">소요</div>
+                  <div class="ticket-info-value">-</div>
+                </div>
+              </div>
+              <div class="ticket-price" style="background: var(--text-muted);">
+                <span class="ticket-price-label">Coming</span>
+                Soon
+              </div>
             </div>
           </div>
 
@@ -72,17 +388,22 @@
           <div class="notch"></div>
         </div>
 
-        <div class="header" style="border-bottom: none; background: transparent;">
+        <div class="terminal-bg" style="filter: blur(2px);">
+          <div class="airship-silhouette">🎈</div>
+        </div>
+
+        <div class="header" style="border-bottom: none; background: transparent; position: relative; z-index: 2;">
           <div style="font-size: 28px;">🌟</div>
           <div class="logo-small" style="color: var(--accent);">B0</div>
           <div class="point-badge">850P</div>
         </div>
 
-        <div class="content" style="padding-top: 0; filter: blur(2px); opacity: 0.5;">
-          <div style="text-align: center; margin-bottom: 24px;">
-            <div style="font-size: 60px; margin-bottom: 8px;">🚀</div>
+        <div class="terminal-scroll" style="filter: blur(2px); opacity: 0.5;">
+          <div class="terminal-title">
+            <h1>Departure Terminal</h1>
+            <h2>어디로 떠나볼까요?</h2>
           </div>
-          <div class="city-card" style="height: 200px;"></div>
+          <div class="flight-ticket" style="height: 120px;"></div>
         </div>
 
         <!-- 프로필 모달 -->
@@ -104,6 +425,77 @@
               <button class="btn btn-ghost" style="height: 40px; font-size: 14px; color: var(--error);">로그아웃</button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 티켓 클릭 시 - 티켓 상세/구매 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.6 B0 터미널 - 티켓 상세</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">비행선 예매</div>
+          <div style="width: 24px;"></div>
+        </div>
+
+        <div class="content">
+          <!-- 도시 정보 -->
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div style="width: 80px; height: 80px; border-radius: 20px; background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 40px;">🌅</div>
+            <h2 style="font-size: 24px; font-weight: 600; margin-bottom: 4px;">세렌시아</h2>
+            <p style="font-size: 14px; color: var(--accent-light); margin-bottom: 8px;">관계의 도시</p>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">노을빛 항구 마을에서<br>소중한 인연을 만나요</p>
+          </div>
+
+          <!-- 티켓 옵션 선택 -->
+          <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">티켓 선택</h3>
+
+          <div class="ticket-option selected">
+            <div class="ticket-radio"></div>
+            <div style="flex: 1;">
+              <div class="ticket-info">
+                <h3>일반 비행선</h3>
+                <p>5분 소요</p>
+              </div>
+            </div>
+            <div style="font-weight: 600; color: var(--accent-light);">300P</div>
+          </div>
+
+          <div class="ticket-option">
+            <div class="ticket-radio"></div>
+            <div style="flex: 1;">
+              <div class="ticket-info">
+                <h3>쾌속 비행선</h3>
+                <p>즉시 도착</p>
+              </div>
+            </div>
+            <div style="font-weight: 600; color: var(--accent-light);">500P</div>
+          </div>
+
+          <!-- 결제 정보 -->
+          <div class="card" style="margin-top: 24px;">
+            <div class="summary-row">
+              <span class="summary-label">보유 포인트</span>
+              <span class="summary-value">850P</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">티켓 가격</span>
+              <span class="summary-value" style="color: var(--error);">-300P</span>
+            </div>
+            <div class="summary-row" style="border-top: 1px solid var(--border); padding-top: 12px;">
+              <span class="summary-label">결제 후 잔액</span>
+              <span class="summary-value" style="color: var(--accent-light);">550P</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-fixed">
+          <button class="btn btn-primary">🎫 비행선 탑승하기</button>
         </div>
       </div>
     </div>
