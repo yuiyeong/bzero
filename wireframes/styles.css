@@ -851,6 +851,12 @@ body {
   padding: 20px;
   border: 1px solid var(--border);
   margin-bottom: 12px;
+  transition: all 0.2s;
+}
+
+.activity-card-clickable:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .activity-header {
@@ -942,4 +948,160 @@ body {
 .screen-link-path {
   font-size: 12px;
   color: var(--text-muted);
+}
+
+/* 메뉴 리스트 */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  font-size: 20px;
+}
+
+.menu-text {
+  flex: 1;
+  text-align: left;
+}
+
+.menu-arrow {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* 일기 카드 */
+.diary-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.diary-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.diary-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.diary-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.diary-preview {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.diary-meta {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.diary-city {
+  color: var(--accent-light);
+}
+
+.diary-mood {
+  font-size: 16px;
+}
+
+.diary-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.diary-content p {
+  margin-bottom: 16px;
+}
+
+.diary-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* 문답지 카드 */
+.questionnaire-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.questionnaire-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.questionnaire-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.questionnaire-question {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.questionnaire-preview {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Q&A 섹션 */
+.qa-section {
+  margin-bottom: 24px;
+}
+
+.qa-answer {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-top: 16px;
 }

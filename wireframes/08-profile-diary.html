@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B0 Wireframe - 프로필/일기/문답지</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- 3.20 프로필 모달 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.20 프로필 모달</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <!-- 배경 (B0 터미널) -->
+        <div class="content-full" style="background: linear-gradient(180deg, rgba(147, 51, 234, 0.2) 0%, #1a1a2e 50%); filter: blur(2px); opacity: 0.3;">
+          <div style="padding: 60px 16px 24px;">
+            <div style="text-align: center;">
+              <div style="font-size: 60px;">🚀</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 모달 -->
+        <div class="modal-overlay">
+          <div class="modal-card" style="padding: 32px 24px;">
+            <!-- 프로필 정보 -->
+            <div style="text-align: center; margin-bottom: 24px;">
+              <div style="font-size: 64px; margin-bottom: 8px;">😊</div>
+              <h2 style="font-size: 20px; margin-bottom: 8px;">민수</h2>
+              <div class="point-badge" style="display: inline-block;">850P</div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border); margin: 24px 0;"></div>
+
+            <!-- 메뉴 -->
+            <div class="menu-list">
+              <button class="menu-item">
+                <span class="menu-icon">📝</span>
+                <span class="menu-text">나의 일기</span>
+                <span class="menu-arrow">→</span>
+              </button>
+
+              <button class="menu-item">
+                <span class="menu-icon">📋</span>
+                <span class="menu-text">나의 문답지</span>
+                <span class="menu-arrow">→</span>
+              </button>
+
+              <button class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span class="menu-text">설정</span>
+                <span class="menu-arrow">→</span>
+              </button>
+            </div>
+
+            <div style="border-top: 1px solid var(--border); margin: 24px 0;"></div>
+
+            <button class="btn btn-secondary" style="width: 100%;">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.16 일기 리스트 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.16 일기 리스트 (/diary)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">나의 일기</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <p style="text-align: center; color: var(--text-secondary); margin-bottom: 24px;">
+            📝 내가 작성한 일기들
+          </p>
+
+          <!-- 일기 카드 1 -->
+          <div class="diary-card">
+            <div class="diary-date">2024.12.15</div>
+            <h3 class="diary-title">세렌시아에서의 첫날</h3>
+            <p class="diary-preview">
+              오늘 처음으로 세렌시아에 도착했다. 노을빛 항구의 풍경이 정말 아름다웠다...
+            </p>
+            <div class="diary-meta">
+              <span class="diary-city">세렌시아</span>
+              <span style="margin: 0 8px;">·</span>
+              <span class="diary-mood">🥰</span>
+            </div>
+          </div>
+
+          <!-- 일기 카드 2 -->
+          <div class="diary-card">
+            <div class="diary-date">2024.12.14</div>
+            <p class="diary-preview">
+              오늘은 힘든 하루였다. 회사에서 프로젝트 마감이 다가와서...
+            </p>
+            <div class="diary-meta">
+              <span class="diary-city">로렌시아</span>
+              <span style="margin: 0 8px;">·</span>
+              <span class="diary-mood">😢</span>
+            </div>
+          </div>
+
+          <!-- 일기 카드 3 -->
+          <div class="diary-card">
+            <div class="diary-date">2024.12.13</div>
+            <h3 class="diary-title">조용한 하루</h3>
+            <p class="diary-preview">
+              오늘은 혼자만의 시간을 가졌다. 개인 숙소에서 책을 읽으며...
+            </p>
+            <div class="diary-meta">
+              <span class="diary-city">로렌시아</span>
+              <span style="margin: 0 8px;">·</span>
+              <span class="diary-mood">😊</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.16 일기 리스트 - 빈 상태 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.16 일기 리스트 - 빈 상태</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">나의 일기</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <div style="text-align: center; padding-top: 120px;">
+            <div style="font-size: 80px; margin-bottom: 24px;">📝</div>
+            <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 8px;">
+              아직 작성한 일기가 없어요
+            </p>
+            <p style="font-size: 14px; color: var(--text-muted);">
+              여행 중 개인 숙소에서<br>
+              일기를 작성해보세요
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.17 일기 상세 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.17 일기 상세 (/diary/:diaryId)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">나의 일기</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 8px;">
+            2024년 12월 15일
+          </p>
+
+          <h2 style="font-size: 20px; margin-bottom: 16px; color: var(--text-primary);">
+            세렌시아에서의 첫날
+          </h2>
+
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+            <span style="font-size: 24px;">🌅</span>
+            <span style="font-size: 16px; color: var(--accent-light);">세렌시아</span>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin-bottom: 24px;"></div>
+
+          <div class="diary-content">
+            <p>
+              오늘 처음으로 세렌시아에 도착했다. 노을빛 항구의 풍경이 정말 아름다웠다.
+              사랑방에서 만난 사람들도 다들 따뜻했고, 민수님과 좋은 대화를 나눴다.
+            </p>
+            <p>
+              오늘은 정말 특별한 날이었다. 앞으로 더 많은 이야기를 나누고 싶다.
+              이곳에서의 시간이 나에게 많은 의미가 될 것 같다.
+            </p>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin: 24px 0;"></div>
+
+          <div style="text-align: center;">
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px;">
+              오늘의 기분
+            </p>
+            <div style="font-size: 48px;">🥰</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.18 문답지 리스트 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.18 문답지 리스트 (/questionnaire)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">나의 문답지</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <p style="text-align: center; color: var(--text-secondary); margin-bottom: 24px;">
+            📋 내가 작성한 문답지들
+          </p>
+
+          <!-- 문답지 카드 1 -->
+          <div class="questionnaire-card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="font-size: 24px;">🌅</span>
+              <div>
+                <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">세렌시아</div>
+                <div style="font-size: 12px; color: var(--text-muted);">관계의 도시</div>
+              </div>
+            </div>
+
+            <div class="questionnaire-date">2024.12.15</div>
+
+            <div class="questionnaire-question">
+              "요즘 나에게 힘이<br>되어주는 사람은?"
+            </div>
+
+            <p class="questionnaire-preview">
+              친구 민지입니다. 힘들 때... <span style="color: var(--accent-light);">(더보기)</span>
+            </p>
+          </div>
+
+          <!-- 문답지 카드 2 -->
+          <div class="questionnaire-card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="font-size: 24px;">🌲</span>
+              <div>
+                <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">로렌시아</div>
+                <div style="font-size: 12px; color: var(--text-muted);">회복의 도시</div>
+              </div>
+            </div>
+
+            <div class="questionnaire-date">2024.12.14</div>
+
+            <div class="questionnaire-question">
+              "요즘 나를 지치게<br>하는 것은?"
+            </div>
+
+            <p class="questionnaire-preview">
+              야근과 성과 압박이... <span style="color: var(--accent-light);">(더보기)</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.18 문답지 리스트 - 빈 상태 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.18 문답지 리스트 - 빈 상태</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">나의 문답지</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <div style="text-align: center; padding-top: 120px;">
+            <div style="font-size: 80px; margin-bottom: 24px;">📋</div>
+            <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 8px;">
+              아직 작성한 문답지가 없어요
+            </p>
+            <p style="font-size: 14px; color: var(--text-muted);">
+              여행 중 개인 숙소에서<br>
+              문답지를 작성해보세요
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.19 문답지 상세 -->
+    <div style="position: relative;">
+      <div class="screen-label">3.19 문답지 상세 (/questionnaire/:questionnaireId)</div>
+      <div class="screen">
+        <div class="status-bar">
+          <div class="notch"></div>
+        </div>
+
+        <div class="header">
+          <div class="header-back">←</div>
+          <div class="header-title">나의 문답지</div>
+          <div class="header-action"></div>
+        </div>
+
+        <div class="content">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span style="font-size: 28px;">🌅</span>
+            <span style="font-size: 18px; font-weight: 600; color: var(--text-primary);">세렌시아</span>
+          </div>
+
+          <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+            관계의 도시
+          </p>
+
+          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">
+            2024년 12월 15일
+          </p>
+
+          <div style="border-top: 1px solid var(--border); margin-bottom: 24px;"></div>
+
+          <!-- 질문 1 -->
+          <div class="qa-section">
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+              질문 1/3
+            </p>
+
+            <div class="question-card">
+              <p class="question-text" style="font-size: 15px;">
+                "요즘 나에게 힘이<br>되어주는 사람은?"
+              </p>
+            </div>
+
+            <p class="qa-answer">
+              친구 민지입니다. 힘들 때 항상 내 이야기를 들어주고 응원해줍니다.
+            </p>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin: 24px 0;"></div>
+
+          <!-- 질문 2 -->
+          <div class="qa-section">
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+              질문 2/3
+            </p>
+
+            <div class="question-card">
+              <p class="question-text" style="font-size: 15px;">
+                "최근에 누군가와 나눈<br>의미 있는 대화는?"
+              </p>
+            </div>
+
+            <p class="qa-answer">
+              오늘 사랑방에서 민수님과 나눈 대화가 기억에 남아요. 서로의 일상에 대해 이야기하면서 공감대를 느꼈습니다.
+            </p>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); margin: 24px 0;"></div>
+
+          <!-- 질문 3 -->
+          <div class="qa-section">
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+              질문 3/3
+            </p>
+
+            <div class="question-card">
+              <p class="question-text" style="font-size: 15px;">
+                "관계에서 내가 가장<br>중요하게 생각하는 것은?"
+              </p>
+            </div>
+
+            <p class="qa-answer">
+              서로를 존중하고 진심으로 대하는 것이라고 생각합니다. 솔직한 대화와 공감이 관계를 더욱 깊게 만든다고 믿어요.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
