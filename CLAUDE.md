@@ -197,6 +197,32 @@ git push
 - 깊이 있는 대화를 원하는 사람
 - 온라인 커뮤니티 경험이 있는 사람
 
+## 코드 분석 도구 사용 규칙
+
+**IMPORTANT**: 코드 분석 시 반드시 Serena MCP 도구를 우선 사용할 것.
+
+### Serena MCP 도구 우선 사용
+
+- 파일 전체를 읽는 대신 `mcp__serena__get_symbols_overview`로 심볼 개요 먼저 파악
+- 심볼 검색 시 `mcp__serena__find_symbol` 사용 (Grep/Glob 대신)
+- 참조 찾기 시 `mcp__serena__find_referencing_symbols` 사용
+- 패턴 검색 시 `mcp__serena__search_for_pattern` 사용
+- 심볼 수정 시 `mcp__serena__replace_symbol_body`, `mcp__serena__insert_after_symbol` 사용
+
+### 사용 순서
+
+1. `mcp__serena__get_symbols_overview` - 파일 구조 파악
+2. `mcp__serena__find_symbol` - 특정 심볼 찾기 (depth, include_body 활용)
+3. `mcp__serena__find_referencing_symbols` - 참조 추적
+4. 필요시에만 Read 도구로 전체 파일 읽기
+
+### 금지 사항
+
+- 전체 파일을 Read로 읽기 전에 반드시 심볼 개요부터 확인
+- Grep/Glob은 비코드 파일이나 Serena가 지원하지 않는 경우에만 사용
+
+---
+
 ## 개발 시 주의사항
 
 ### 보안
